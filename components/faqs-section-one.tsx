@@ -7,28 +7,28 @@ export default function FAQs() {
     const faqItems = [
         {
             id: 'item-1',
-            question: 'How long does shipping take?',
-            answer: 'Standard shipping takes 3-5 business days, depending on your location. Express shipping options are available at checkout for 1-2 business day delivery.',
+            question: 'Apakah hanya untuk mobil Eropa?',
+            answer: 'Tidak! Kami melayani semua tipe dan merk mobil, mulai dari Jepang, Eropa, hingga mobil premium.',
         },
         {
             id: 'item-2',
-            question: 'What payment methods do you accept?',
-            answer: 'We accept all major credit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, and Google Pay. For enterprise customers, we also offer invoicing options.',
+            question: 'Apakah plafon bisa diperbaiki tanpa bongkar seluruh interior?',
+            answer: 'Bisa! Kami spesialis plafon turun, proses efisien, rapi, dan minim bongkar.',
         },
         {
             id: 'item-3',
-            question: 'Can I change or cancel my order?',
-            answer: 'You can modify or cancel your order within 1 hour of placing it. After this window, please contact our customer support team who will assist you with any changes.',
+            question: 'Berapa lama waktu pengerjaan?',
+            answer: 'Tergantung jenis kerusakan; rata-rata 1-3 hari, namun kami utamakan hasil presisi dan rapi.',
         },
         {
             id: 'item-4',
-            question: 'Do you ship internationally?',
-            answer: "Yes, we ship to over 50 countries worldwide. International shipping typically takes 7-14 business days. Additional customs fees may apply depending on your country&apos;s import regulations.",
+            question: 'Apakah dapat garansi?',
+            answer: 'Tentu. Semua layanan kami bergaransi—jika ada masalah dari pengerjaan kami, perbaikan ulang GRATIS.',
         },
         {
             id: 'item-5',
-            question: 'What is your return policy?',
-            answer: 'We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some specialty items may have different return terms, which will be noted on the product page.',
+            question: 'Lokasi dan cara konsultasi?',
+            answer: 'Workshop kami di Rungkut Alang-Alang 189, Surabaya. Konsultasi/boking via WA: 0822-4552-7366.',
         },
     ]
 
@@ -36,8 +36,8 @@ export default function FAQs() {
         <section className="bg-muted py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-4 md:px-6">
                 <div>
-                    <h2 className="text-foreground text-4xl font-semibold">Frequently Asked Questions</h2>
-                    <p className="text-muted-foreground mt-4 text-balance text-lg">Discover quick and comprehensive answers to common questions about our platform, services, and features.</p>
+                    <h2 className="text-foreground text-4xl font-semibold">Pertanyaan Umum</h2>
+                    <p className="text-muted-foreground mt-4 text-balance text-lg">Temukan jawaban lengkap untuk pertanyaan umum seputar layanan restorasi interior mobil kami.</p>
                 </div>
 
                 <div className="mt-12">
@@ -59,11 +59,11 @@ export default function FAQs() {
                     </Accordion>
 
                     <p className="text-muted-foreground mt-6">
-                        Can&apos;t find what you&apos;re looking for? Contact our{' '}
+                        Tidak menemukan jawaban yang Anda cari? Hubungi kami di{' '}
                         <Link
-                            href="#"
+                            href="https://wa.me/6282245527366"
                             className="text-primary font-medium hover:underline">
-                            customer support team
+                            WhatsApp: 0822-4552-7366
                         </Link>
                     </p>
                 </div>

@@ -10,9 +10,9 @@ export default function ContentSection() {
             <div className="bg-muted/50 py-24">
                 <div className="mx-auto w-full max-w-5xl px-6">
                     <div>
-                        <span className="text-primary">Smart Editor</span>
-                        <h2 className="text-foreground mt-4 text-4xl font-semibold">Ask Tailark to Edit anything</h2>
-                        <p className="text-muted-foreground mb-12 mt-4 text-lg">Efficient content creation is our mission. With Tailark, you can effortlessly edit text, generate code snippets, format documents, create visualizations from data, and seamlessly integrate with your existing workflow.</p>
+                        <span className="text-primary">Restorasi Interior Mobil Terlengkap</span>
+                        <h2 className="text-foreground mt-4 text-4xl font-semibold">Tentang Kami</h2>
+                        <p className="text-muted-foreground mb-12 mt-4 text-lg">Mobil terasa tidak nyaman karena interior mulai kusam? Jangan khawatir! RR Restorasi Surabaya adalah solusi spesialis untuk segala masalah interior mobil Anda. Dari perbaikan plafon turun, tombol lengket, handle aus, hingga re-colour jok dan panel—semua dikerjakan dengan detail dan garansi hasil seperti baru.</p>
                     </div>
 
                     <div className="border-foreground/5 space-y-6 [--color-border:color-mix(in_oklab,var(--color-foreground)10%,transparent)] sm:space-y-0 sm:divide-y">
