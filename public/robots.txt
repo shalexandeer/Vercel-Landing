@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://rrrestorasi.com
+
+# Sitemaps
+Sitemap: https://rrrestorasi.com/sitemap.xml
