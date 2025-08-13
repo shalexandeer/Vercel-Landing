@@ -1,4 +1,5 @@
 import { Logo } from '@/components/logo'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const links = [
@@ -30,16 +31,14 @@ const links = [
 
 export default function FooterSection() {
     return (
-        <footer className="bg-muted py-16">
+        <footer className="bg-muted py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-6">
-                <Link
-                    href="/"
-                    aria-label="go home"
-                    className="mx-auto block size-fit">
-                    <Logo />
-                </Link>
+                <div className='flex flex-row items-center justify-center gap-2'>
+                    <Image src="/logo1.svg" alt="logo" width={50} height={50} />
+                    <h1>RR Restorasi</h1>
+                </div>
 
-                <div className="my-8 flex flex-wrap justify-center gap-6">
+                {/* <div className="my-8 flex flex-wrap justify-center gap-6">
                     {links.map((link, index) => (
                         <Link
                             key={index}
@@ -48,115 +47,54 @@ export default function FooterSection() {
                             <span>{link.title}</span>
                         </Link>
                     ))}
-                </div>
+                </div> */}
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
-                    <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="X/Twitter"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="currentColor"
-                                d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="currentColor"
-                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="currentColor"
-                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Threads"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="none"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="1.5"
-                                d="M19.25 8.505c-1.577-5.867-7-5.5-7-5.5s-7.5-.5-7.5 8.995s7.5 8.996 7.5 8.996s4.458.296 6.5-3.918c.667-1.858.5-5.573-6-5.573c0 0-3 0-3 2.5c0 .976 1 2 2.5 2s3.171-1.027 3.5-3c1-6-4.5-6.5-6-4"
-                                color="currentColor"></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="currentColor"
-                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="TikTok"
-                        className="text-muted-foreground hover:text-primary block">
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24">
-                            <path
-                                fill="currentColor"
-                                d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"></path>
-                        </svg>
-                    </Link>
+                     <div className="flex w-full items-center justify-between sm:justify-end gap-4 md:w-fit">
+                                <p className="text-muted-foreground text-sm">Follow us on</p> 
+                                {/* Socials logo bar, as in hero-section-one.tsx */}
+                                <div className="flex items-center gap-3">
+                                    <a 
+                                        href="https://instagram.com/rrrestorasi" 
+                                        className="p-2 rounded-full bg-muted hover:bg-[#F5130E]/10 transition-colors"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 2.25a6.25 6.25 0 1 1 0 12.5 6.25 6.25 0 0 1 0-12.5zm0 1.5a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5zm6.25 1.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                                        </svg>
+                                    </a>
+                                    <a 
+                                        href="https://youtube.com/@rrrestorasi" 
+                                        className="p-2 rounded-full bg-muted hover:bg-[#F5130E]/10 transition-colors"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21.8 8.001a2.75 2.75 0 0 0-1.94-1.94C18.2 5.5 12 5.5 12 5.5s-6.2 0-7.86.56a2.75 2.75 0 0 0-1.94 1.94C2.5 9.66 2.5 12 2.5 12s0 2.34.56 3.999a2.75 2.75 0 0 0 1.94 1.94C5.8 18.5 12 18.5 12 18.5s6.2 0 7.86-.56a2.75 2.75 0 0 0 1.94-1.94C21.5 14.34 21.5 12 21.5 12s0-2.34-.56-3.999zM10 15.5v-7l6 3.5-6 3.5z"/>
+                                        </svg>
+                                    </a>
+                                    <a 
+                                        href="https://tiktok.com/@rrrestorasi" 
+                                        className="p-2 rounded-full bg-muted hover:bg-[#F5130E]/10 transition-colors"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.35V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                        </svg>
+                                    </a>
+                                    <a 
+                                        href="https://wa.me/6282245527366" 
+                                        className="p-2 rounded-full bg-muted hover:bg-[#F5130E]/10 transition-colors"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20.52 3.48A12 12 0 0 0 3.48 20.52l-1.32 4.84a1 1 0 0 0 1.22 1.22l4.84-1.32A12 12 0 1 0 20.52 3.48zm-8.52 17a9 9 0 1 1 9-9 9 9 0 0 1-9 9zm4.29-6.71-1.06-1.06a1 1 0 0 0-1.41 0l-.71.71a7 7 0 0 1-3.54-3.54l.71-.71a1 1 0 0 0 0-1.41l-1.06-1.06a1 1 0 0 0-1.41 0A5 5 0 0 0 7 12a5 5 0 0 0 5 5 5 5 0 0 0 3.54-1.46 1 1 0 0 0 0-1.41z" fill="currentColor"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
                 </div>
                 <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} Tailark Mist, All rights reserved</span>
             </div>
