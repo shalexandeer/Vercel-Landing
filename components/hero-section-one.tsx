@@ -16,12 +16,12 @@ export default function HeroSection() {
                             <div className="grid grid-cols-1 gap-12 items-center">
                                 <div className='flex flex-start flex-col text-center  items-center  '>
                                     <Link
-                                        href="#link"
-                                        className="hover:bg-background dark:hover:border-t-border bg-[#039DEB]/10 border-[#039DEB]/20 group my-6 flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-                                        <span className="text-[#039DEB] text-sm">🕒 Buka: Senin - Sabtu (08:00 - 17:00)</span>
-                                        <span className="dark:border-background block h-4 w-0.5 border-l bg-[#039DEB]/20 dark:bg-zinc-700"></span>
+                                        href="#cabang"
+                                        className="hover:bg-background dark:hover:border-t-border bg-primary/10 border-primary/20 group my-6 flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
+                                        <span className="text-primary text-sm">🕒 Buka: Senin - Sabtu (08:00 - 17:00)</span>
+                                        <span className="dark:border-background block h-4 w-0.5 border-l bg-primary/20 dark:bg-zinc-700"></span>
 
-                                        <div className="bg-[#039DEB]/20 group-hover:bg-[#039DEB]/30 size-6 overflow-hidden rounded-full duration-500">
+                                        <div className="bg-primary/20 group-hover:bg-primary/30 size-6 overflow-hidden rounded-full duration-500">
                                             <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
                                                 <span className="flex size-6">
                                                     <ArrowRight className="m-auto size-3" />

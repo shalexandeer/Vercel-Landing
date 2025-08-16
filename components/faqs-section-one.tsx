@@ -28,11 +28,11 @@ export default function FAQs() {
     ]
 
     return (
-        <section className="bg-muted py-16 md:py-24">
+        <section className="bg-muted py-16 md:py-24" id='faqs'>
             <div className="mx-auto max-w-5xl px-4 md:px-6">
                 <div>
                     <h2 className="text-foreground text-4xl font-semibold">Pertanyaan Umum Restorasi Mobil</h2>
-                    <p className="text-muted-foreground mt-4 text-balance text-lg">Temukan jawaban lengkap untuk pertanyaan umum seputar layanan <strong>restorasi mobil</strong>, <strong>perbaikan interior mobil</strong>, dan <strong>bengkel restorasi</strong> kami di Surabaya.</p>
+                    <p className="text-muted-foreground mt-4 text-balance lg:text-lg">Temukan jawaban lengkap untuk pertanyaan umum seputar layanan <strong>restorasi mobil</strong>, <strong>perbaikan interior mobil</strong>, dan <strong>bengkel restorasi</strong> kami di Surabaya.</p>
                 </div>
 
                 <div className="mt-12">

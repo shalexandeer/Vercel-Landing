@@ -9,10 +9,8 @@ const menuItems = [
     { name: 'Beranda', href: '#hero' },
     { name: 'Layanan', href: '#layanan' },
     { name: 'Cabang', href: '#cabang' },
-    { name: 'Fitur', href: '#fitur' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Testimoni', href: '#testimoni' },
-    { name: 'Kontak', href: '#footer' },
+    { name: 'FAQ', href: '#faqs' },
+    { name: 'Testimoni', href: '#testimonials' },
 ]
 
 export const HeroHeader = () => {
@@ -77,7 +75,9 @@ export const HeroHeader = () => {
                                         <li key={index}>
                                             <Link
                                                 href={item.href}
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                                className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                                                onClick={() => setMenuState(false)}
+                                            >
                                                 <span>{item.name}</span>
                                             </Link>
                                         </li>

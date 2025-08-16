@@ -31,7 +31,7 @@ const links = [
 
 export default function FooterSection() {
     return (
-        <footer className="bg-muted py-16 md:py-24">
+        <footer id="footer" className="bg-muted py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-6">
                 <div className='flex flex-row items-center justify-center gap-2'>
                     <Image src="/logo1.svg" alt="logo" width={50} height={50} />
@@ -96,7 +96,7 @@ export default function FooterSection() {
                                 </div>
                             </div>
                 </div>
-                <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} Tailark Mist, All rights reserved</span>
+                <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} RR Restorasi, All rights reserved</span>
             </div>
         </footer>
     )
