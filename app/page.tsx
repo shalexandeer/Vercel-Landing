@@ -13,7 +13,7 @@ export default function Home() {
       <FeaturesSection />
       <ContentSection />
       <FAQs />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FooterSection />
       <FloatingWhatsApp />
     </>

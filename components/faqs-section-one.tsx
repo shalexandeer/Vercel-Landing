@@ -28,33 +28,37 @@ export default function FAQs() {
     ]
 
     return (
-        <section className="bg-muted py-16 md:py-24" id='faqs'>
-            <div className="mx-auto max-w-5xl px-4 md:px-6">
-                <div>
-                    <h2 className="text-foreground text-4xl font-semibold">Pertanyaan Umum Restorasi Mobil</h2>
-                    <p className="text-muted-foreground mt-4 text-balance lg:text-lg">Temukan jawaban lengkap untuk pertanyaan umum seputar layanan <strong>restorasi mobil</strong>, <strong>perbaikan interior mobil</strong>, dan <strong>bengkel restorasi</strong> kami di Surabaya.</p>
+        <section className="py-6 md:py-24 bg-[#181818]" id='faqs'>
+            <div className="mx-auto max-w-5xl">
+                <div 
+                    className="flex flex-col justify-between cursor-pointer transition-colors h-full mb-6 px-6"
+                >
+                    <h3 className="text-base font-semibold text-white ">QUESTION?</h3>
+                    <h3 className="text-xl font-semibold text-white uppercase">ASK QUESTION</h3>
                 </div>
 
-                <div className="mt-12">
+                <div className="">
                     <Accordion
                         type="single"
                         collapsible
                         defaultValue="item-1"
-                        className="bg-card ring-foreground/5 rounded-(--radius) w-full border border-transparent px-8 py-3 shadow ring-1">
+                        className="bg-[#181818] w-full !border-none rounded-none shadow text-white">
                         {faqItems.map((item) => (
                             <AccordionItem
                                 key={item.id}
                                 value={item.id}
-                                className="border-dotted">
-                                <AccordionTrigger className="cursor-pointer text-base hover:no-underline">{item.question}</AccordionTrigger>
-                                <AccordionContent>
+                                className="border-none">
+                                <AccordionTrigger className="cursor-pointer font-semibold rounded-none border-none text-base hover:no-underline px-6 data-[state=open]:bg-[#2E2E2E] bg-[#181818] transition-colors duration-200">
+                                    {item.question}
+                                </AccordionTrigger>
+                                <AccordionContent className='!border-none px-6 bg-[#2E2E2E]'>
                                     <p className="text-base">{item.answer}</p>
                                 </AccordionContent>
                             </AccordionItem>
                         ))}
                     </Accordion>
 
-                    <p className="text-muted-foreground mt-6">
+                    <p className="text-muted mt-6 px-6">
                         Tidak menemukan jawaban yang Anda cari? Hubungi kami di{' '}
                         <Link
                             href="https://wa.me/6282245527366"

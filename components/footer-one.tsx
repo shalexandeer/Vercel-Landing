@@ -31,11 +31,10 @@ const links = [
 
 export default function FooterSection() {
     return (
-        <footer id="footer" className="bg-muted py-16 md:py-24">
+        <footer id="footer" className="bg-[#181818] py-16 md:py-24">
             <div className="mx-auto max-w-5xl px-6">
                 <div className='flex flex-row items-center justify-center gap-2'>
-                    <Image src="/logo1.svg" alt="logo" width={50} height={50} />
-                    <h1>RR Restorasi</h1>
+                    <Image src="/logo.png" alt="logo" width={200} height={50} style={{ maxWidth: '200px', height: 'auto' }} />
                 </div>
 
                 {/* <div className="my-8 flex flex-wrap justify-center gap-6">
@@ -48,9 +47,9 @@ export default function FooterSection() {
                         </Link>
                     ))}
                 </div> */}
-                <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+                <div className="my-8 flex flex-wrap justify-center gap-6 text-sm text-whot">
                      <div className="flex w-full items-center justify-between sm:justify-end gap-4 md:w-fit">
-                                <p className="text-muted-foreground text-sm">Follow us on</p> 
+                                <p className="text-muted text-sm">Follow us on</p> 
                                 {/* Socials logo bar, as in hero-section-one.tsx */}
                                 <div className="flex items-center gap-3">
                                     <a 
@@ -96,7 +95,7 @@ export default function FooterSection() {
                                 </div>
                             </div>
                 </div>
-                <span className="text-muted-foreground block text-center text-sm"> © {new Date().getFullYear()} RR Restorasi, All rights reserved</span>
+                <span className="text-muted block text-center text-sm"> © {new Date().getFullYear()} RR Restorasi, All rights reserved</span>
             </div>
         </footer>
     )
