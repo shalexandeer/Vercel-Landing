@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://rrrestorasi.com',
+  siteUrl: process.env.SITE_URL || 'https://rrrestorasi.co.id',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   robotsTxtOptions: {
@@ -11,7 +11,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://rrrestorasi.com/sitemap.xml',
+      'https://rrrestorasi.co.id/sitemap.xml',
     ],
   },
   changefreq: 'weekly',

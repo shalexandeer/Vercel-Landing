@@ -61,9 +61,9 @@ export default function FAQs() {
                     <p className="text-muted mt-6 px-6">
                         Tidak menemukan jawaban yang Anda cari? Hubungi kami di{' '}
                         <Link
-                            href="https://wa.me/6282245527366"
+                            href="https://wa.me/6281511361035"
                             className="text-primary font-medium hover:underline">
-                            WhatsApp: 0822-4552-7366
+                            WhatsApp: 0815-1136-1035
                         </Link>
                     </p>
                 </div>

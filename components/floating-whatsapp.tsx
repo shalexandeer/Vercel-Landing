@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from './ui/dialog'
 import { branches } from './branches'
 import { DialogDescription } from '@radix-ui/react-dialog'
+import Image from 'next/image'
 
 export default function FloatingWhatsApp() {
   const [isVisible, setIsVisible] = useState(false)
@@ -35,12 +36,12 @@ export default function FloatingWhatsApp() {
       >
         <button
           onClick={() => setOpen(true)}
-          className="group relative flex h-14 w-14 items-center justify-center rounded-full  text-white shadow-lg transition-all duration-300 bg-[#F5130E] hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#F5130E]/30"
+          className="group relative flex h-14 w-14 items-center justify-center rounded-full  text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#F5130E]/30"
           aria-label="Chat on WhatsApp"
         >
-          <MessageCircle className="h-6 w-6" />
+          <Image src={'/iconwa.png'} alt="WhatsApp Icon" width={380} height={380} className="size-full" />
           {/* Pulse animation */}
-          <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-20"></div>
+          <div className="absolute inset-0 rounded-full animate-ping opacity-20"></div>
           {/* Tooltip */}
           <div className="absolute right-full mr-3 hidden group-hover:block">
             <div className="relative">

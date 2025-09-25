@@ -41,14 +41,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://rrrestorasi.com'),
+  metadataBase: new URL('https://rrrestorasi.co.id'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "RR Restorasi - Jasa Restorasi Mobil & Perbaikan Interior Terpercaya di Surabaya",
     description: "RR Restorasi Surabaya - Spesialis restorasi mobil, perbaikan interior, recondition, repair, retrim jok, repaint interior, dan replace panel. Layanan berkualitas dengan garansi hasil memuaskan.",
-    url: 'https://rrrestorasi.com',
+    url: 'https://rrrestorasi.co.id',
     siteName: 'RR Restorasi',
     images: [
       {
@@ -99,7 +99,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "name": "RR Restorasi",
               "description": "Spesialis restorasi mobil, perbaikan interior, recondition, repair, retrim jok, repaint interior, dan replace panel di Surabaya",
-              "url": "https://rrrestorasi.com",
+              "url": "https://rrrestorasi.co.id",
               "telephone": "+62-822-4552-7366",
               "address": {
                 "@type": "PostalAddress",

@@ -74,7 +74,7 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full items-center justify-between sm:justify-end gap-4 md:w-fit">
-                                <p className="text-muted-foreground text-sm">Follow us on</p> 
+                                <p className="text-muted font-semibold text-sm">Follow us on</p> 
                                 {/* Socials logo bar, as in hero-section-one.tsx */}
                                 <div className="flex items-center gap-3">
                                     <a 
