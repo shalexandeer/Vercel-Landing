@@ -20,3 +20,13 @@ export const BRANCHES_QUERY = groq`
     order
   }
 `
+
+export const SOCIAL_MEDIA_QUERY = groq`
+  *[_type == "socialMedia"] | order(order asc) {
+    _id,
+    name,
+    url,
+    icon,
+    order
+  }
+`
