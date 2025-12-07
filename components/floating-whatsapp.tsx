@@ -3,11 +3,15 @@
 import { MessageCircle } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from './ui/dialog'
-import { branches } from './branches'
+import { UnifiedBranch } from '@/types/branch'
 import { DialogDescription } from '@radix-ui/react-dialog'
 import Image from 'next/image'
 
-export default function FloatingWhatsApp() {
+interface FloatingWhatsAppProps {
+  branches: UnifiedBranch[]
+}
+
+export default function FloatingWhatsApp({ branches }: FloatingWhatsAppProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -61,7 +65,7 @@ export default function FloatingWhatsApp() {
           </DialogHeader>
           <ul className="space-y-4 mt-4">
             {branches.map((branch) => (
-              <li key={branch.id} className="flex items-center justify-between gap-4 border rounded p-3">
+              <li key={(branch as any)._id || (branch as any).id} className="flex items-center justify-between gap-4 border rounded p-3">
                 <div>
                   <div className="font-semibold">{branch.name}</div>
                   <div className="text-xs text-muted-foreground">{branch.address}</div>

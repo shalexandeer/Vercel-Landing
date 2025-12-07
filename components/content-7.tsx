@@ -1,57 +1,15 @@
 'use client'
 
 import { GoogleMapsEmbed } from '@next/third-parties/google'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import { client } from '@/sanity/lib/client'
-import { BRANCHES_QUERY } from '@/sanity/lib/queries'
+import { UnifiedBranch } from '@/types/branch'
 
-// Define the Branch type
-interface Branch {
-  _id: string;
-  name: string;
-  address: string;
-  mapQuery: string;
-  phone: string;
-  order: number;
+interface ContentSectionProps {
+    branches: UnifiedBranch[]
 }
 
-// Define the fallback Branch type
-interface FallbackBranch {
-  id: number;
-  name: string;
-  address: string;
-  mapQuery: string;
-  phone: string;
-}
-
-// Import fallback branches from the static file
-import { branches as fallbackBranches } from './branches'
-
-async function getBranches(): Promise<Branch[]> {
-  const branches = await client.fetch(BRANCHES_QUERY);
-  return branches;
-}
-
-export default function ContentSection() {
-    const [activeBranch, setActiveBranch] = useState<Branch | FallbackBranch>(fallbackBranches[0])
-    const [branches, setBranches] = useState<Branch[] | FallbackBranch[]>(fallbackBranches)
-
-    useEffect(() => {
-        async function loadBranches() {
-            try {
-                const branchItems = await getBranches();
-                if (branchItems && branchItems.length > 0) {
-                    setBranches(branchItems);
-                    setActiveBranch(branchItems[0]);
-                }
-            } catch (error) {
-                console.error('Error loading branches from Sanity:', error);
-                // Fallback to static data
-            }
-        }
-        loadBranches();
-    }, []);
+export default function ContentSection({ branches }: ContentSectionProps) {
 
     return (
         <section className="py-6 bg-[#303030] " id='cabang'>
@@ -64,12 +22,12 @@ export default function ContentSection() {
                 </div>
                 <div className="relative space-y-4 w-full">
                     <ul className="grid sm:space-y-3 sm:grid-cols-3">
-                        {branches.map((branch, idx) => (
-                            <li
-                                key={(branch as Branch)._id || (branch as FallbackBranch).id}
-                                onClick={() => setActiveBranch(branch)}
-                                className={`cursor-pointer rounded transition-all duration-300 gap-2`}
-                            >
+                            {branches.map((branch, idx) => (
+                                <li
+                                    key={(branch as any)._id || (branch as any).id}
+                                    // onClick={() => setActiveBranch(branch)}
+                                    className={`cursor-pointer rounded transition-all duration-300 gap-2`}
+                                >
                                 <div className='px-6 py-4 space-y-5'>
                                     <div className='flex justify-between items-center'>
                                         <h1 className="font-semibold text-base text-center text-white">{branch.name}</h1>

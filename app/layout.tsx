@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import { SanityLive } from "@/sanity/lib/live";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -138,6 +139,7 @@ export default function RootLayout({
         className={`${montserrat.variable} antialiased font-sans`}
       >
         {children}
+        <SanityLive />
       </body>
     </html>
   );
