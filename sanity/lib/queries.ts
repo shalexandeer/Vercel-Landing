@@ -9,3 +9,14 @@ export const FAQS_QUERY = groq`
     order
   }
 `
+
+export const BRANCHES_QUERY = groq`
+  *[_type == "branch"] | order(order asc) {
+    _id,
+    name,
+    address,
+    mapQuery,
+    phone,
+    order
+  }
+`
