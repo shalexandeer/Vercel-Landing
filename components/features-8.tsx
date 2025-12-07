@@ -5,6 +5,7 @@ import { Car, Palette, Settings, Shield, Replace, ChevronDown } from 'lucide-rea
 import { useState } from 'react'
 import { Button } from './ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const services = [
     {
@@ -151,10 +152,13 @@ export default function FeaturesSection() {
                                                                     after
                                                                 </span>
                                                             )}
-                                                            <img
+                                                            <Image
                                                                 src={img}
                                                                 alt={`${service.title} photo ${idx + 1}`}
                                                                 className="object-cover w-full h-full"
+                                                                fill
+                                                                sizes="(max-width: 768px) 50vw, 25vw"
+                                                                priority={idx === 0}
                                                             />
                                                         </div>
                                                     ))}

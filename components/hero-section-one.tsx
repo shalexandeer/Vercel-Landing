@@ -3,8 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { HeroHeader } from './header'
-import { ChevronRight, MessageCircle, ArrowRight } from 'lucide-react'
-import { Video } from './video'
 import { Marquee } from "./magicui/marquee";
 
 export default function HeroSection() {

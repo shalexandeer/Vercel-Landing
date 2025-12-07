@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { client } from '@/sanity/lib/client'
 import { SOCIAL_MEDIA_QUERY } from '@/sanity/lib/queries'
+import Image from 'next/image';
 
 interface SocialMedia {
   _id?: string;
@@ -91,9 +92,11 @@ export function SocialMediaClient({ className = "", showLabel = false, labelClas
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <Image
               src={`https://www.google.com/s2/favicons?sz=64&domain=${getDomain(item.url)}`}
               alt={item.name}
+              width={20}
+              height={20}
               className="w-5 h-5"
             />
           </a>

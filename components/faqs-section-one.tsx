@@ -8,18 +8,15 @@ interface FAQ {
   _id: string;
   question: string;
   answer: string;
+}
+
+// Define the fallback FAQ type
+interface FAQAPI extends FAQ {
   category: string;
   order: number;
 }
 
-// Define the fallback FAQ type
-interface FallbackFAQ {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-async function getFAQs(): Promise<FAQ[]> {
+async function getFAQs(): Promise<FAQAPI[]> {
   const faqs = await client.fetch(FAQS_QUERY);
   return faqs;
 }
@@ -28,24 +25,24 @@ export default async function FAQs() {
     const faqItems = await getFAQs();
     
     // Fallback to hardcoded FAQs if no data is found
-    const fallbackFaqs: FallbackFAQ[] = [
+    const fallbackFaqs: FAQ[] = [
         {
-            id: 'item-1',
+            _id: 'item-1',
             question: 'Apa saja jasa restorasi mobil yang ditawarkan RR Restorasi?',
             answer: 'Kami melayani berbagai kebutuhan restorasi mobil dan perbaikan interior mobil, meliputi recondition mobil, repair interior mobil, replace panel mobil, retrim jok mobil, dan repaint interior. Tim ahli kami siap mengembalikan performa dan estetika kendaraan Anda dengan presisi.',
         },
         {
-            id: 'item-2',
+            _id: 'item-2',
             question: 'Berapa lama proses pengerjaan restorasi mobil?',
             answer: 'Durasi pengerjaan restorasi mobil sangat bervariasi, tergantung pada kondisi kendaraan dan jenis layanan yang dibutuhkan. Setelah pemeriksaan awal, kami akan memberikan estimasi waktu yang lebih akurat untuk perbaikan interior mobil Anda.',
         },
         {
-            id: 'item-3',
+            _id: 'item-3',
             question: 'Di mana lokasi bengkel restorasi RR Restorasi di Surabaya?',
             answer: 'Lokasi bengkel restorasi kami berada di Rungkut Alang-Alang 189, Surabaya. Anda bisa mencari kami di Google Maps dengan mengetik "RR Restorasi Surabaya" untuk panduan arah yang lebih mudah.',
         },
         {
-            id: 'item-4',
+            _id: 'item-4',
             question: 'Kapan jam operasional bengkel restorasi RR Restorasi?',
             answer: 'Kami siap melayani Anda dari Senin hingga Sabtu, mulai pukul 08:00 hingga 17:00. Namun, kami sarankan untuk membuat janji terlebih dahulu agar kami dapat melayani restorasi mobil Anda dengan lebih maksimal.',
         }
@@ -67,12 +64,12 @@ export default async function FAQs() {
                     <Accordion
                         type="single"
                         collapsible
-                        defaultValue={(displayItems[0] as any)?._id || (displayItems[0] as any)?.id}
+                        defaultValue={(displayItems[0])?._id}
                         className="bg-[#181818] w-full !border-none rounded-none shadow text-white">
-                        {displayItems.map((item: any) => (
+                        {displayItems.map((item: FAQ) => (
                             <AccordionItem
-                                key={item._id || item.id}
-                                value={item._id || item.id}
+                                key={item._id}
+                                value={item._id}
                                 className="border-none">
                                 <AccordionTrigger className="cursor-pointer font-semibold rounded-none border-none text-base hover:no-underline px-6 data-[state=open]:bg-[#2E2E2E] bg-[#181818] transition-colors duration-200">
                                     {item.question}

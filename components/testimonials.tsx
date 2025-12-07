@@ -1,12 +1,9 @@
 'use client'
 
-import { Card, CardContent } from '@/components/ui/card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { Marquee } from '@/components/magicui/marquee'
+import Image from 'next/image';
+import { Star } from 'lucide-react';
 
 const testimonials = [
   {
@@ -59,10 +56,12 @@ export default function Testimonials() {
                                     {/* Activity Image (optional) */}
                                     {testimonial.activityImage && (
                                         <div className="relative h-40 md:h-auto md:w-1/3 flex-shrink-0">
-                                            <img
+                                            <Image
                                                 src={testimonial.activityImage}
                                                 alt={`Activity - ${testimonial.activityImage}`}
                                                 className="object-cover w-full h-full"
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 33vw"
                                             />
                                             <div className="absolute inset-0 bg-black/20"></div>
                                         </div>

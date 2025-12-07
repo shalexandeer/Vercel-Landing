@@ -7,7 +7,8 @@ import {authorType} from './authorType'
 import {faqType} from './faqType'
 import {branchType} from './branchType'
 import {socialMediaType} from './socialMediaType'
+import {serviceType} from './serviceType'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [blockContentType, categoryType, postType, authorType, faqType, branchType, socialMediaType],
+  types: [blockContentType, categoryType, postType, authorType, faqType, branchType, socialMediaType, serviceType],
 }

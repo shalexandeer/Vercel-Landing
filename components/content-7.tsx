@@ -1,12 +1,10 @@
 'use client'
 
+import { Branch } from '@/types/branch'
 import { GoogleMapsEmbed } from '@next/third-parties/google'
-import { useState } from 'react'
-import Image from 'next/image'
-import { UnifiedBranch } from '@/types/branch'
 
 interface ContentSectionProps {
-    branches: UnifiedBranch[]
+    branches: Branch[]
 }
 
 export default function ContentSection({ branches }: ContentSectionProps) {
@@ -24,7 +22,7 @@ export default function ContentSection({ branches }: ContentSectionProps) {
                     <ul className="grid sm:space-y-3 sm:grid-cols-3">
                             {branches.map((branch, idx) => (
                                 <li
-                                    key={(branch as any)._id || (branch as any).id}
+                                    key={branch.mapQuery}
                                     // onClick={() => setActiveBranch(branch)}
                                     className={`cursor-pointer rounded transition-all duration-300 gap-2`}
                                 >

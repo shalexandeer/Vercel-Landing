@@ -1,5 +1,6 @@
 import { client } from '@/sanity/lib/client'
 import { SOCIAL_MEDIA_QUERY } from '@/sanity/lib/queries'
+import Image from 'next/image';
 
 // Define the Social Media type
 interface SocialMedia {
@@ -67,10 +68,13 @@ export async function SocialMediaLinks({ className = "", showLabel = false, labe
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <Image
               src={`https://s.magecdn.com/social/tc-${item.name}.svg`}
               alt={item.name}
+              width={20}
+              height={20}
               className="w-5 h-5"
+              unoptimized
             />
           </a>
         ))}

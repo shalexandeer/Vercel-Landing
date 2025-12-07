@@ -30,3 +30,25 @@ export const SOCIAL_MEDIA_QUERY = groq`
     order
   }
 `
+
+export const SERVICES_QUERY = groq`
+  *[_type == "service" && isActive == true] | order(order asc) {
+    _id,
+    title,
+    slug,
+    description,
+    icon,
+    images[] {
+      image {
+        asset {
+          _id,
+          url
+        }
+      },
+      alt,
+      type
+    },
+    order,
+    isActive
+  }
+`
