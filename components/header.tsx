@@ -5,6 +5,7 @@ import React from 'react'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { SocialMediaClient } from './social-media-client'
+import { SocialMedia } from './social-media'
 
 const menuItems = [
     { name: 'Beranda', href: '#hero' },
@@ -14,7 +15,7 @@ const menuItems = [
     { name: 'Testimoni', href: '#testimonials' },
 ]
 
-export const HeroHeader = () => {
+export const HeroHeader = ({socialMedia}: {socialMedia: SocialMedia[]}) => {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
 
@@ -75,7 +76,7 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full items-center justify-between sm:justify-end gap-4 md:w-fit">
-                                <SocialMediaClient showLabel={true} labelClassName="text-muted font-semibold text-sm" />
+                                <SocialMediaClient socialMedia={socialMedia} showLabel={true} labelClassName="text-muted font-semibold text-sm" />
                             </div>
                         </div>
                     </div>

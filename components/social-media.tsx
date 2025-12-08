@@ -3,7 +3,7 @@ import { SOCIAL_MEDIA_QUERY } from '@/sanity/lib/queries'
 import Image from 'next/image';
 
 // Define the Social Media type
-interface SocialMedia {
+export interface SocialMedia {
   _id?: string;
   name: string;
   url: string;
@@ -11,7 +11,7 @@ interface SocialMedia {
 }
 
 // Define fallback social media data
-const fallbackSocialMedia: SocialMedia[] = [
+export const fallbackSocialMedia: SocialMedia[] = [
   {
     _id: 'instagram',
     name: 'instagram',
@@ -34,33 +34,21 @@ const fallbackSocialMedia: SocialMedia[] = [
   },
 ]
 
-async function getSocialMedia(): Promise<SocialMedia[]> {
-  try {
-    const socialMedia = await client.fetch(SOCIAL_MEDIA_QUERY);
-    return socialMedia;
-  } catch (error) {
-    console.error('Error fetching social media data:', error);
-    return [];
-  }
-}
-
 interface SocialMediaProps {
   className?: string;
   showLabel?: boolean;
   labelClassName?: string;
+  socialMedia: SocialMedia[];
 }
 
-export async function SocialMediaLinks({ className = "", showLabel = false, labelClassName = "" }: SocialMediaProps) {
-  const socialMediaItems = await getSocialMedia();
-  const displayItems = (socialMediaItems && socialMediaItems.length > 0) ? socialMediaItems : fallbackSocialMedia;
-
+export async function SocialMediaLinks({ className = "", showLabel = false, labelClassName = "", socialMedia}: SocialMediaProps) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       {showLabel && (
         <p className={`text-muted font-semibold text-sm ${labelClassName}`}>Follow us on</p>
       )}
       <div className="flex items-center gap-3">
-        {displayItems.map((item) => (
+        {socialMedia.map((item) => (
           <a
             key={item._id || item.name}
             href={item.url}

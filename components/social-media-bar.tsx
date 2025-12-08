@@ -1,9 +1,9 @@
-import { SocialMediaLinks } from './social-media'
+import { SocialMedia, SocialMediaLinks } from './social-media'
 
-export async function SocialMediaBar() {
+export async function SocialMediaBar({socialMedia}: {socialMedia: SocialMedia[]}) {
     return (
         <div className="flex w-full items-center justify-between sm:justify-end gap-4 md:w-fit">
-            <SocialMediaLinks showLabel={true} labelClassName="text-muted font-semibold text-sm" />
+            <SocialMediaLinks socialMedia={socialMedia} showLabel={true} labelClassName="text-muted font-semibold text-sm" />
         </div>
     )
 }

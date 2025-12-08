@@ -8,7 +8,6 @@ import { Marquee } from "./magicui/marquee";
 export default function HeroSection() {
     return (
         <>
-            <HeroHeader />
             <main className="overflow-hidden">
                 <section className="bg-linear-to-b  to-muted from-background h-[558px] flex flex-col justify-end items-center relative bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/hero-img.png')"}}>
                     {/* Dark overlay gradient */}

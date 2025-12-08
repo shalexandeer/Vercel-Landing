@@ -2,13 +2,23 @@
 
 import { Branch } from '@/types/branch'
 import { GoogleMapsEmbed } from '@next/third-parties/google'
+import React from 'react'
+import Image from 'next/image'
+
+interface SocialMedia {
+  _id?: string;
+  name: string;
+  url: string;
+  order?: number;
+}
 
 interface ContentSectionProps {
     branches: Branch[]
+    socialMedia: SocialMedia[]
 }
 
-export default function ContentSection({ branches }: ContentSectionProps) {
-
+export default function ContentSection({ branches, socialMedia }: ContentSectionProps) {
+    const filteredItems = socialMedia.filter((item) => item.name === 'tiktok' || item.name === 'instagram')
     return (
         <section className="py-6 bg-[#303030] " id='cabang'>
             <div className="mx-auto max-w-5xl space-y-8 md:space-y-8">
@@ -58,42 +68,49 @@ export default function ContentSection({ branches }: ContentSectionProps) {
                                 {idx !== 2 && <div className="my-4 h-px w-full bg-[#4B4B4B]" />}
                             </li>
                         ))}
-                        <li className='flex justify-between items-center px-6'>
-                            <h1 className="font-semibold text-base text-center text-white">Instagram</h1>
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={e => e.stopPropagation()}
-                                className="p-2 rounded-full bg-muted  transition-colors"
-                                title="Kunjungi Instagram"
-                                href="https://instagram.com/rrrestorasi"
-                            >
-                                {/* Instagram Logo */}
-                                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 2.25a6.25 6.25 0 1 1 0 12.5 6.25 6.25 0 0 1 0-12.5zm0 1.5a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5zm6.25 1.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                                </svg>
-                               {/* <Image src={'iconig.png'} alt="Instagram Icon" width={380} height={380} className="size-[38px]" /> */}
-                            </a>
-                        </li>
-                        <li className='flex justify-between items-center px-6 max-md:mt-6'>
-                            <h1 className="font-semibold text-base text-center text-white">Tiktok</h1>
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={e => e.stopPropagation()}
-                                className="pr-2 pl-1 py-2 rounded-full bg-muted  transition-colors"
-                                title="Kunjungi TikTok"
-                                href="https://www.tiktok.com/@rrrestorasi"
-                            >
-                                {/* TikTok Logo */}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="size-6" fill="black" viewBox="0 0 24 24">
-                                    <path d="M21 8.306c-1.237 0-2.418-.404-3.385-1.146V15.5a5.5 5.5 0 1 1-5.5-5.5c.172 0 .34.014.507.033v2.07A3.5 3.5 0 1 0 15.5 15.5V2h2.018c.13 2.01 1.77 3.606 3.982 3.806v2.5zm-8.5 7.194a1.5 1.5 0 1 0 0 3v-3z"/>
-                                </svg>
-                            </a>
-                        </li>
+                        {filteredItems?.map((item) => (
+                            <li key={item._id || item.name} className='flex justify-between items-center px-6 max-md:mt-6'>
+                                <h1 className="font-semibold text-base text-center text-white capitalize">{item.name}</h1>
+                                <a
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={e => e.stopPropagation()}
+                                    className={`p-2 rounded-full bg-muted transition-colors`}
+                                    title={`Kunjungi ${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`}
+                                    href={item.url}
+                                >
+                                   
+                                    <Image
+                                        src={`https://www.google.com/s2/favicons?sz=64&domain=${getDomain(item.url)}`}
+                                        alt={item.name}
+                                        width={20}
+                                        height={20}
+                                        className="w-5 h-5"
+                                    />
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>
         </section>
     )
+}
+
+// Helper function to extract domain from URL
+function getDomain(url: string) {
+    try {
+        const lowerUrl = url.toLowerCase()
+        const urlWithProtocol =
+            lowerUrl.startsWith("http://") || lowerUrl.startsWith("https://")
+                ? lowerUrl
+                : "http://" + lowerUrl
+        const urlObj = new URL(urlWithProtocol)
+        const parts = urlObj.hostname.split(".")
+        const domain = parts.slice(-2).join(".")
+        return domain.toLowerCase()
+    } catch (error) {
+        console.error("Error parsing URL:", error)
+        return ""
+    }
 }
