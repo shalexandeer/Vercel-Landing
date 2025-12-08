@@ -1,6 +1,7 @@
 import { client } from '@/sanity/lib/client'
 import { SOCIAL_MEDIA_QUERY } from '@/sanity/lib/queries'
 import Image from 'next/image';
+import { getContactPerson, fallbackContactPerson } from '@/lib/contact-person';
 
 // Define the Social Media type
 export interface SocialMedia {
@@ -10,29 +11,33 @@ export interface SocialMedia {
   order?: number;
 }
 
-// Define fallback social media data
-export const fallbackSocialMedia: SocialMedia[] = [
-  {
-    _id: 'instagram',
-    name: 'instagram',
-    url: 'https://instagram.com/rrrestorasi',
-  },
-  {
-    _id: 'youtube',
-    name: 'youtube',
-    url: 'https://youtube.com/@rrrestorasi',
-  },
-  {
-    _id: 'tiktok',
-    name: 'tiktok',
-    url: 'https://tiktok.com/@rrrestorasi',
-  },
-  {
-    _id: 'whatsapp',
-    name: 'whatsapp',
-    url: 'https://wa.me/6282245527366',
-  },
-]
+// Function to create fallback social media data with dynamic WhatsApp
+export async function getFallbackSocialMedia(): Promise<SocialMedia[]> {
+  const contactPerson = await getContactPerson() || fallbackContactPerson;
+  
+  return [
+    {
+      _id: 'instagram',
+      name: 'instagram',
+      url: 'https://instagram.com/rrrestorasi',
+    },
+    {
+      _id: 'youtube',
+      name: 'youtube',
+      url: 'https://youtube.com/@rrrestorasi',
+    },
+    {
+      _id: 'tiktok',
+      name: 'tiktok',
+      url: 'https://tiktok.com/@rrrestorasi',
+    },
+    {
+      _id: 'whatsapp',
+      name: 'whatsapp',
+      url: `https://wa.me/${contactPerson.phone.replace(/[^0-9]/g, '')}`,
+    },
+  ];
+}
 
 interface SocialMediaProps {
   className?: string;

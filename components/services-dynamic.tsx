@@ -7,6 +7,7 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import { Service } from '@/types/service';
 import Image from 'next/image';
+import { ContactPerson } from '@/types/contactPerson';
 
 // Icon mapping
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -35,9 +36,10 @@ interface FallbackService {
 
 interface ServicesDynamicProps {
   services: Service[];
+  contactPerson: ContactPerson;
 }
 
-export default function ServicesDynamic({ services }: ServicesDynamicProps) {
+export default function ServicesDynamic({ services, contactPerson }: ServicesDynamicProps) {
   const [expandedService, setExpandedService] = useState<string | null>(null);
 
   const toggleService = (serviceId: string) => {
@@ -177,7 +179,7 @@ export default function ServicesDynamic({ services }: ServicesDynamicProps) {
                             size="lg"
                             className="mt-4 bg-secondary hover:bg-secondary/90  mx-6 hidden md:flex"
                           >
-                            <Link href="https://wa.me/6282245527366" className="flex items-center gap-2 text-white">
+                            <Link href={`https://wa.me/${contactPerson.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-white">
                               <span className="text-nowrap text-base">HUBUNGI SEKARANG</span>
                             </Link>
                           </Button>
@@ -220,7 +222,7 @@ export default function ServicesDynamic({ services }: ServicesDynamicProps) {
                             size="lg"
                             className="mt-4 bg-secondary hover:bg-secondary/90 w-full"
                             >
-                            <Link href="https://wa.me/6282245527366" className="flex items-center gap-2 text-white">
+                            <Link href={`https://wa.me/${contactPerson.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-white">
                                 <span className="text-nowrap text-base">HUBUNGI SEKARANG</span>
                             </Link>
                             </Button>

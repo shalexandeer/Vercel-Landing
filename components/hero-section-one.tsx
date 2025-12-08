@@ -4,8 +4,13 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { HeroHeader } from './header'
 import { Marquee } from "./magicui/marquee";
+import { ContactPerson } from '@/types/contactPerson';
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  contactPerson: ContactPerson;
+}
+
+export default function HeroSection({ contactPerson }: HeroSectionProps) {
     return (
         <>
             <main className="overflow-hidden">
@@ -22,7 +27,7 @@ export default function HeroSection() {
                             size="lg"
                             className="mt-4 bg-secondary hover:bg-secondary/90 w-full "
                         >
-                            <Link href="https://wa.me/6282245527366" className="flex items-center gap-2 text-white">
+                            <Link href={`https://wa.me/${contactPerson.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-2 text-white">
                                 <span className="text-nowrap text-base">HUBUNGI SEKARANG</span>
                             </Link>
                         </Button>

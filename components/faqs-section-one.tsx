@@ -2,6 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import Link from 'next/link'
 import { client } from '@/sanity/lib/client'
 import { FAQS_QUERY } from '@/sanity/lib/queries'
+import { ContactPerson } from '@/types/contactPerson'
 
 // Define the FAQ type
 interface FAQ {
@@ -16,12 +17,16 @@ interface FAQAPI extends FAQ {
   order: number;
 }
 
+interface FAQsProps {
+  contactPerson: ContactPerson;
+}
+
 async function getFAQs(): Promise<FAQAPI[]> {
   const faqs = await client.fetch(FAQS_QUERY);
   return faqs;
 }
 
-export default async function FAQs() {
+export default async function FAQs({ contactPerson }: FAQsProps) {
     const faqItems = await getFAQs();
     
     // Fallback to hardcoded FAQs if no data is found
@@ -84,9 +89,9 @@ export default async function FAQs() {
                     <p className="text-muted mt-6 px-6">
                         Tidak menemukan jawaban yang Anda cari? Hubungi kami di{' '}
                         <Link
-                            href="https://wa.me/6281511361035"
+                            href={`https://wa.me/${contactPerson.phone.replace(/[^0-9]/g, '')}`}
                             className="text-primary font-medium hover:underline">
-                            WhatsApp: 0815-1136-1035
+                            WhatsApp: {contactPerson.phone}
                         </Link>
                     </p>
                 </div>

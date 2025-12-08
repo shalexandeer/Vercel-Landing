@@ -21,6 +21,16 @@ export const BRANCHES_QUERY = groq`
   }
 `
 
+export const CONTACT_PERSON_QUERY = groq`
+  *[_type == "contactPerson" && isActive == true][0] {
+    _id,
+    name,
+    email,
+    phone,
+    isActive
+  }
+`
+
 export const SOCIAL_MEDIA_QUERY = groq`
   *[_type == "socialMedia"] | order(order asc) {
     _id,
