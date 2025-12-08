@@ -40,7 +40,7 @@ export const SERVICES_QUERY = groq`
     icon,
     images[] {
       image {
-        asset {
+        asset-> {
           _id,
           url
         }

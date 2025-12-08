@@ -166,7 +166,7 @@ export default function ServicesDynamic({ services }: ServicesDynamicProps) {
                     </div>
                     {/* Expandable content */}
                     <div className={`overflow-hidden transition-all grid md:grid-cols-2 duration-500 ease-in-out ${
-                      isExpanded ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                      isExpanded ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
                     }`}>
                         <div>
                           <p className="text-white text-sm text-justify px-6 mb-6">
@@ -175,7 +175,7 @@ export default function ServicesDynamic({ services }: ServicesDynamicProps) {
                           <Button
                             asChild
                             size="lg"
-                            className="mt-4 bg-secondary hover:bg-secondary/90  mx-6"
+                            className="mt-4 bg-secondary hover:bg-secondary/90  mx-6 hidden md:flex"
                           >
                             <Link href="https://wa.me/6282245527366" className="flex items-center gap-2 text-white">
                               <span className="text-nowrap text-base">HUBUNGI SEKARANG</span>
@@ -184,11 +184,11 @@ export default function ServicesDynamic({ services }: ServicesDynamicProps) {
                         </div>
                         
                         {/* Photo collage */}
-                        <div className="grid grid-cols-2 px-6 pb-4">
+                        <div className="grid grid-cols-2 aspect-[4/3] px-6 pb-4">
                           {('images' in service ? service.images?.slice(0, 4) || [] : []).map((img, idx) => {
                             const imageUrl = typeof img === 'string' ? img : img.image?.asset?.url;
                             return (
-                              <div key={idx} className="aspect-[4/3] w-full overflow-hidden relative">
+                              <div key={idx} className=" w-full h-full overflow-hidden relative">
                                 {(idx === 0 || idx === 2) && (
                                   <span className="absolute bottom-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded z-10">
                                     before
@@ -215,15 +215,15 @@ export default function ServicesDynamic({ services }: ServicesDynamicProps) {
                           })}
                         </div>
                         <div className='px-6 pb-8 md:hidden'>
-                          <Button
+                            <Button
                             asChild
                             size="lg"
                             className="mt-4 bg-secondary hover:bg-secondary/90 w-full"
-                          >
+                            >
                             <Link href="https://wa.me/6282245527366" className="flex items-center gap-2 text-white">
-                              <span className="text-nowrap text-base">HUBUNGI SEKARANG</span>
+                                <span className="text-nowrap text-base">HUBUNGI SEKARANG</span>
                             </Link>
-                          </Button>
+                            </Button>
                         </div>
                     </div>
                   </div>

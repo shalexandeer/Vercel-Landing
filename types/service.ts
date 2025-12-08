@@ -1,10 +1,5 @@
 export interface ServiceImage {
-  image: {
-    asset: {
-      _id: string;
-      url: string;
-    };
-  };
+  image: any; // Sanity image reference
   alt: string;
   type: 'before' | 'after';
 }

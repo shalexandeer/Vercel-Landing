@@ -84,14 +84,14 @@ export const serviceType = defineType({
           ],
           preview: {
             select: {
-              imageUrl: 'image.asset.url',
+              image: 'image',
               alt: 'alt',
               type: 'type',
             },
-            prepare: ({ imageUrl, alt, type }) => ({
+            prepare: ({ image, alt, type }) => ({
               title: alt,
               subtitle: type,
-              media: imageUrl,
+              media: image,
             }),
           },
         },
@@ -116,18 +116,18 @@ export const serviceType = defineType({
       initialValue: true,
     }),
   ],
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'description',
-      media: 'images.0.image.asset.url',
-    },
-    prepare: ({ title, subtitle, media }) => ({
-      title,
-      subtitle: subtitle ? `${subtitle.substring(0, 50)}...` : '',
-      media: media,
-    }),
-  },
+//   preview: {
+//     select: {
+//       title: 'title',
+//       subtitle: 'description',
+//       media: 'images.0.image',
+//     },
+//     prepare: ({ title, subtitle, media }) => ({
+//       title,
+//       subtitle: subtitle ? `${subtitle.substring(0, 50)}...` : '',
+//       media: media,
+//     }),
+//   },
   orderings: [
     {
       title: 'Order',

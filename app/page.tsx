@@ -15,6 +15,8 @@ export default async function Home() {
 
   const { data: services } = await sanityFetch({ query: SERVICES_QUERY }) || { data: [] as Service[] };
 
+  console.log(services)
+
   return (
     <>
       <HeroSection />
