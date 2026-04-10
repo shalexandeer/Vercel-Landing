@@ -12,6 +12,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "RR Restorasi - Jasa Restorasi Mobil & Perbaikan Interior Terpercaya di Surabaya",
   description: "RR Restorasi Surabaya - Spesialis restorasi mobil, perbaikan interior, recondition, repair, retrim jok, repaint interior, dan replace panel. Layanan berkualitas dengan garansi hasil memuaskan. Hubungi kami sekarang!",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   keywords: [
     "restorasi mobil",
     "bengkel restorasi",
