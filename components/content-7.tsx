@@ -65,9 +65,11 @@ export default function ContentSection({ branches, socialMedia }: ContentSection
                                         q={branch.mapQuery}
                                     />
                                 </div>
-                                {idx !== 2 && <div className="my-4 h-px w-full bg-[#4B4B4B]" />}
                             </li>
                         ))}
+                    </ul>
+                    <div className='h-px bg-muted-foreground' />
+                    <ul  className="grid sm:space-y-3 sm:grid-cols-3">
                         {filteredItems?.map((item) => (
                             <li key={item._id || item.name} className='flex justify-between items-center px-6 max-md:mt-6'>
                                 <h1 className="font-semibold text-base text-center text-white capitalize">{item.name}</h1>
@@ -79,7 +81,7 @@ export default function ContentSection({ branches, socialMedia }: ContentSection
                                     title={`Kunjungi ${item.name.charAt(0).toUpperCase() + item.name.slice(1)}`}
                                     href={item.url}
                                 >
-                                   
+                                    
                                     <Image
                                         src={`https://www.google.com/s2/favicons?sz=64&domain=${getDomain(item.url)}`}
                                         alt={item.name}
