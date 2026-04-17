@@ -15,9 +15,9 @@ export const branches = [
   },
   {
     id: 3,
-    name: "RR Restorasi Bekasi",
-    address: "Jl. Pulo Ribung Raya No. 99, Jakasetia, Bekasi Selatan, Kota Bekasi, Jawa Barat 17147, Indonesia",
-    mapQuery: "Jl.+Pulo+Ribung+Raya+No.+99,+Jakasetia,+Bekasi+Selatan,+Kota+Bekasi,+Jawa+Barat+17147,+Indonesia",
-    phone: "+62 815-1136-1035"
+    name: "RR Restorasi Bali",
+    address: "Jl. Chandra Ayu no. XI A. Perum Segeh Sari, Banjar Tubuh, Batu Bulan, Sukawati - Gianyar, Bali, Indonesia",
+    mapQuery: "Jl.+Chandra+Ayu+no.+XI+A.+Perum+Segeh+Sari,+Banjar+Tubuh,+Batu+Bulan,+Sukawati,+Gianyar,+Bali,+Indonesia",
+    phone: "+62 811-8800-6916"
   }
 ]
