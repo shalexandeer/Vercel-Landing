@@ -1,0 +1,30 @@
+[
+  {
+    "_type": "faq",
+    "question": "Apa saja jasa restorasi mobil yang ditawarkan RR Restorasi?",
+    "answer": "Kami melayani berbagai kebutuhan restorasi mobil dan perbaikan interior mobil, meliputi recondition mobil, repair interior mobil, replace panel mobil, retrim jok mobil, dan repaint interior. Tim ahli kami siap mengembalikan performa dan estetika kendaraan Anda dengan presisi.",
+    "order": 1,
+    "category": "general"
+  },
+  {
+    "_type": "faq",
+    "question": "Berapa lama proses pengerjaan restorasi mobil?",
+    "answer": "Durasi pengerjaan restorasi mobil sangat bervariasi, tergantung pada kondisi kendaraan dan jenis layanan yang dibutuhkan. Setelah pemeriksaan awal, kami akan memberikan estimasi waktu yang lebih akurat untuk perbaikan interior mobil Anda.",
+    "order": 2,
+    "category": "general"
+  },
+  {
+    "_type": "faq",
+    "question": "Di mana lokasi bengkel restorasi RR Restorasi di Surabaya?",
+    "answer": "Lokasi bengkel restorasi kami berada di Rungkut Alang-Alang 189, Surabaya. Anda bisa mencari kami di Google Maps dengan mengetik \"RR Restorasi Surabaya\" untuk panduan arah yang lebih mudah.",
+    "order": 3,
+    "category": "location"
+  },
+  {
+    "_type": "faq",
+    "question": "Kapan jam operasional bengkel restorasi RR Restorasi?",
+    "answer": "Kami siap melayani Anda dari Senin hingga Sabtu, mulai pukul 08:00 hingga 17:00. Namun, kami sarankan untuk membuat janji terlebih dahulu agar kami dapat melayani restorasi mobil Anda dengan lebih maksimal.",
+    "order": 4,
+    "category": "general"
+  }
+]
